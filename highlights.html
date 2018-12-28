@@ -1,0 +1,34 @@
+<html>
+  <head>
+	<title>  contents of a person</title>
+	<style>
+		right{
+			float:right;
+			width:700px;
+			
+		}
+	</style>
+	</head>
+  <body>
+	<div class="left" >
+		<h1>hai!!!!!!</h1>
+		Enter your full name:<input type="text"/>
+	</div>
+	<div class="right">
+			<script>
+			function showSource(){
+				var source = "<html>";
+			 source += document.getElementsByTagName('html')[0].innerHTML;
+			 source += "</html>";
+			 //now we need to escape the html special chars, javascript has escape
+			 //but this does not do what we want
+			 source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+			 //now we add <pre> tags to preserve whitespace
+			 source = "<pre>"+source+"</pre>";
+			 document.writeln(source);
+			}
+			showSource();
+			</script>
+  </div>
+  </body>
+</html>
